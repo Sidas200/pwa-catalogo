@@ -1,0 +1,17 @@
+# Despliegue en Netlify (HTTPS automático). Conecta el repositorio y Netlify usará esta configuración.
+[build]
+  base    = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+# El Service Worker y el manifiesto nunca deben quedarse en caché HTTP,
+# para que los navegadores detecten las nuevas versiones.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "no-cache"
