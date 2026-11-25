@@ -2,6 +2,12 @@
 
 **Práctica 1: Desarrollo y Coevaluación de una Aplicación Web Progresiva Básica**
 
+| | |
+|---|---|
+| 🌐 **PWA publicada (HTTPS)** | https://sidas200.github.io/pwa-catalogo/ |
+| 📦 **Repositorio** | https://github.com/Sidas200/pwa-catalogo |
+| 👥 **Equipo** | _Pendiente_ |
+
 Catálogo estático de cafés de especialidad construido como PWA:
 
 - **Frontend:** React 19 + Vite → renderizado del lado del cliente (CSR), App Shell, manifiesto y Service Worker escrito a mano.
@@ -110,17 +116,47 @@ Las rutas son relativas (`base: './'` y `start_url: "./"`), así que funciona ig
 | 3 | App Shell con CSR | `index.html` pinta un shell inicial con CSS crítico en línea; React (`App.jsx`) monta el shell fijo (header/nav/footer) y renderiza en el cliente solo el `<main>` según la ruta `#/…`; esqueletos de carga evitan saltos visuales. |
 | 4 | Service Worker y caché | `src/registrarSW.js` registra `sw.js`. En `install` precachea todo el App Shell (lista generada en el build), en `activate` borra cachés viejas, y en `fetch` intercepta: *cache first* para estáticos, *network first* para datos y navegación. |
 | 5 | Funcionamiento offline | Indicador "Sin conexión" en el header, banner amigable, catálogo servido desde caché, `VistaOffline` si no hay datos y `offline.html` como último respaldo. |
-| 6 | Lighthouse | Performance 98, Accessibility 100, Best Practices 100, SEO 100 (ver resultados abajo). Instalable sin errores. |
+| 6 | Lighthouse | En la URL publicada: Performance 100, Accessibility 100, Best Practices 100, SEO 100. Instalable sin errores (ver evidencias abajo). |
 
-### Resultados de Lighthouse
+## Evidencias
 
-Auditoría ejecutada en Chrome DevTools sobre el build de producción (`npm run build && npm run preview`, `http://localhost:4173/`) el 24 de noviembre de 2026.
+Capturas tomadas en Chrome DevTools sobre la versión publicada (`https://sidas200.github.io/pwa-catalogo/`) el 24 de noviembre de 2026.
 
-| Performance | Accessibility | Best Practices | SEO |
-|:-----------:|:-------------:|:--------------:|:---:|
-| **98** | **100** | **100** | **100** |
+### Lighthouse (criterio 6)
 
-![Resultados de Lighthouse](docs/img/lighthouse.png)
+| Entorno | Performance | Accessibility | Best Practices | SEO |
+|---------|:-----------:|:-------------:|:--------------:|:---:|
+| **Publicada (HTTPS, GitHub Pages)** | **100** | **100** | **100** | **100** |
+| Local (`localhost:4173`) | 98 | 100 | 100 | 100 |
+
+![Lighthouse en la URL publicada](docs/img/lighthouse-https.png)
+
+<details>
+<summary>Lighthouse en local</summary>
+
+![Lighthouse en local](docs/img/lighthouse-local.png)
+</details>
+
+### Manifiesto web (criterio 2)
+Nombre, nombre corto, descripción, `start_url`, colores de tema y `display: standalone`. Sin errores de instalabilidad (las únicas advertencias son opcionales y se refieren a capturas para la interfaz de instalación enriquecida).
+
+![Manifiesto en DevTools](docs/img/manifest.png)
+
+### Service Worker (criterio 4)
+`sw.js` registrado con el alcance `/pwa-catalogo/`, en estado *activated and is running*.
+
+![Service Worker activo](docs/img/service-worker.png)
+
+### Caché del App Shell (criterio 4)
+La caché `shell-<versión>` contiene los 15 recursos del App Shell (HTML, JS, CSS, iconos, manifiesto, datos y `offline.html`); `datos-v1` guarda la última respuesta del catálogo.
+
+![Caché del App Shell](docs/img/cache-shell.png)
+![Caché de datos](docs/img/cache-datos.png)
+
+### Funcionamiento offline (criterio 5)
+Con la red en **Offline**, la app sigue mostrando el catálogo completo servido por el Service Worker (0 B transferidos), con el indicador "Sin conexión" y el banner informativo.
+
+![Modo offline](docs/img/offline.png)
 
 ### Nota sobre Lighthouse
 A partir de **Lighthouse 12** (Chrome 126+) se eliminó la categoría "PWA". Para evidenciar las métricas PWA:
