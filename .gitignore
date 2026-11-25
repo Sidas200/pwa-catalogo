@@ -1,0 +1,13 @@
+# Node / Vite
+node_modules/
+frontend/dist/
+# Java / Maven
+backend/target/
+backend/src/main/resources/static/
+# Entorno y sistema
+.env
+.env.local
+.DS_Store
+.idea/
+.vscode/
+*.iml
