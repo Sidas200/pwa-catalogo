@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "Café de Altura · Catálogo",
+  "short_name": "Café Altura",
+  "description": "Catálogo de cafés de especialidad. Aplicación Web Progresiva que funciona sin conexión.",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f8f1e5",
+  "theme_color": "#3b2416",
+  "categories": ["shopping", "food"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
