@@ -1,0 +1,10 @@
+[
+  { "id": 1, "nombre": "Guadalupe Zaju", "origen": "Chiapas, México", "proceso": "Lavado", "notas": "Chocolate, nuez, caramelo", "descripcion": "Cultivado a 1,400 msnm en la Sierra Madre de Chiapas. Cuerpo medio y acidez suave.", "precio": 189, "emoji": "☕", "color": "#8b5a2b" },
+  { "id": 2, "nombre": "Pluma Hidalgo", "origen": "Oaxaca, México", "proceso": "Lavado", "notas": "Cítricos, miel, almendra", "descripcion": "Variedad típica oaxaqueña con denominación de origen. Taza limpia y brillante.", "precio": 215, "emoji": "🌄", "color": "#a0522d" },
+  { "id": 3, "nombre": "Coatepec", "origen": "Veracruz, México", "proceso": "Honey", "notas": "Durazno, panela, cacao", "descripcion": "Proceso honey que conserva parte del mucílago para una dulzura natural.", "precio": 199, "emoji": "🍑", "color": "#c47a3d" },
+  { "id": 4, "nombre": "Yirgacheffe", "origen": "Etiopía", "proceso": "Natural", "notas": "Frutos rojos, jazmín, té negro", "descripcion": "Origen floral por excelencia. Ideal para métodos de filtrado como V60.", "precio": 289, "emoji": "🌸", "color": "#7b3f61" },
+  { "id": 5, "nombre": "Huila Supremo", "origen": "Colombia", "proceso": "Lavado", "notas": "Manzana roja, caramelo, vainilla", "descripcion": "Grano de tamaño supremo con acidez jugosa y final prolongado.", "precio": 245, "emoji": "🍎", "color": "#9c2f2f" },
+  { "id": 6, "nombre": "Tarrazú", "origen": "Costa Rica", "proceso": "Lavado", "notas": "Chocolate amargo, uva, cítrico", "descripcion": "Alta montaña costarricense; cuerpo robusto y gran balance.", "precio": 265, "emoji": "⛰️", "color": "#4e6b3a" },
+  { "id": 7, "nombre": "Kona Blend", "origen": "Hawái, EUA", "proceso": "Lavado", "notas": "Mantequilla, nuez de macadamia", "descripcion": "Mezcla con granos de las laderas volcánicas de Kona. Suave y cremoso.", "precio": 349, "emoji": "🌋", "color": "#5a4a8a" },
+  { "id": 8, "nombre": "Descafeinado Agua Suiza", "origen": "Chiapas, México", "proceso": "Swiss Water", "notas": "Cacao, galleta, avellana", "descripcion": "Descafeinado sin químicos que conserva el sabor original del grano.", "precio": 205, "emoji": "🌙", "color": "#3d5a80" }
+]
